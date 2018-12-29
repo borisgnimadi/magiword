@@ -1,14 +1,11 @@
 package test;
 
-import presentation.Utilisation;
+import presentation.Vue;
 
 public class Main {
 	
 	public static void main(String[] args) {
-		
-		Utilisation choixJoueur = new Utilisation();
-		choixJoueur.choixJoueur();
-
+		Vue.choixPersonnageJoueur();
 
 	}
 

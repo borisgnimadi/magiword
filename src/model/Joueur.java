@@ -7,7 +7,9 @@ public class Joueur {
 	private int niveauPersonnage;
 	private int forcePersonnage;
 	private int intelligencePersonnage;
-	public static final int NBREDEJOUEUR = 2; 
+	private int agilitePersonnage;
+	public static final int JOUEUR1 = 1; // le jeu comporte deux joueurs 1 et 2
+	public static final int JOUEUR2 = 2; 
 	
 	public int getNumeroJoueur() {
 		return numeroJoueur;
@@ -40,14 +42,25 @@ public class Joueur {
 		this.intelligencePersonnage = intelligencePersonnage;
 	}
 	
-	public Joueur(int numeroJoueur, int niveauPersonnage, int forcePersonnage, int intelligencePersonnage) {
+	
+	public int getAgilitePersonnage() {
+		return agilitePersonnage;
+	}
+	public void setAgilitePersonnage(int agilitePersonnage) {
+		this.agilitePersonnage = agilitePersonnage;
+	}
+	
+
+	public Joueur(int numeroJoueur, int classePersonnage, int niveauPersonnage, int forcePersonnage,
+			int intelligencePersonnage, int agilitePersonnage) {
 		super();
 		this.numeroJoueur = numeroJoueur;
+		this.classePersonnage = classePersonnage;
 		this.niveauPersonnage = niveauPersonnage;
 		this.forcePersonnage = forcePersonnage;
 		this.intelligencePersonnage = intelligencePersonnage;
+		this.agilitePersonnage = agilitePersonnage;
 	}
-	
 	public Joueur() {
 		// TODO Auto-generated constructor stub
 	}
