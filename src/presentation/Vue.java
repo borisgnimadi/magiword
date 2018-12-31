@@ -3,6 +3,8 @@ package presentation;
 import model.Joueur;
 import presentation.Utilisation;
 import presentation.Vue;
+import service.ServiceImplementation;
+import test.Main;
 
 
 public class Vue {
@@ -26,14 +28,17 @@ public class Vue {
 	 * choix des caractéristiques du joueur. 
 	 */
 	public static void choixPersonnageJoueur(){
-	int[] tabJoueur = {Joueur.JOUEUR1, Joueur.JOUEUR2};
 	Utilisation choixJoueur = new Utilisation();
 	
-	for (int i : tabJoueur) { // On fait une loop pour chaque joueur
+	for (int i = 1 ; i <= Main.NOMBREJOUEUR ; i++) { // On fait une loop pour chaque joueur
+		Joueur joueur = new Joueur(); // On déclare un nouveau joueur
+		joueur.setNumeroJoueur(i);
 		messageBienvenueDuJoueur(i);
-		choixJoueur.choixClassePersonnage(i); // le choix de la classe débouche sur le choix des autres caractéristiques du joueur
-//		choixJoueur.choixNiveauPersonnage(i);
-//		choixJoueur.choixForcePersonnage(i);		
+		choixJoueur.choixClassePersonnage(joueur); // le choix de la classe débouche sur le choix des autres caractéristiques du joueur
+
+		ServiceImplementation joueurEnbase = new ServiceImplementation();
+		joueurEnbase.addJoueur(joueur); // On sauvegarde le joueur en mémoire
+
 	}
 	}
 	

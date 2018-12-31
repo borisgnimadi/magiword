@@ -8,8 +8,6 @@ public class Joueur {
 	private int forcePersonnage;
 	private int intelligencePersonnage;
 	private int agilitePersonnage;
-	public static final int JOUEUR1 = 1; // le jeu comporte deux joueurs 1 et 2
-	public static final int JOUEUR2 = 2; 
 	
 	public int getNumeroJoueur() {
 		return numeroJoueur;
@@ -66,9 +64,15 @@ public class Joueur {
 	}
 	@Override
 	public String toString() {
-		return "Joueur [numeroJoueur=" + numeroJoueur + ", niveauPersonnage=" + niveauPersonnage + ", forcePersonnage="
-				+ forcePersonnage + ", intelligencePersonnage=" + intelligencePersonnage + "]";
+		String classePersonnageWording = classePersonnage == 1 ? "Guerrier" // définission le label du personnage
+				: (classePersonnage == 2 ? "Rodeur" : "Mage");
+
+		return "Le joueur " + numeroJoueur + " est un " + classePersonnageWording + ", et est de niveau : "
+				+ niveauPersonnage + " dont force : " + forcePersonnage + ", intelligence : "
+				+ intelligencePersonnage + ", et d'agilite : " + agilitePersonnage ;
 	}
+
+
 
 	
 	
