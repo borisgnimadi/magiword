@@ -7,22 +7,22 @@ package service;
  */
 public class ValidationDeLaSommeDesCaracteresDuJoueur {
 	
-	public static boolean validationNiveauOK (int valeurNiveau) {
-		boolean niveauOK = valeurNiveau <= 100 ? true : false ;
+	public static boolean validationNiveauOK (double valeurMaxAutorise) {
+		boolean niveauOK = valeurMaxAutorise <= 100 ? true : false ;
 		return niveauOK;
 	}
 	
-	public static boolean validationForceOK (int valeurNiveau, int valeurForce) {
-		boolean forceOK = (valeurForce <= valeurNiveau) && validationNiveauOK(valeurNiveau)? true : false ;
+	public static boolean validationForceOK (double valeurMaxAutorise, double forceJoueurNumero) {
+		boolean forceOK = (forceJoueurNumero <= valeurMaxAutorise) && validationNiveauOK(valeurMaxAutorise)? true : false ;
 		return forceOK;
 	}
 	
-	public static boolean validationIntelligenceOK (int valeurNiveau, int valeurForce, int valeurIntelligence) {
-		boolean intelligenceOK = (valeurForce + valeurIntelligence <= valeurNiveau) && validationNiveauOK(valeurNiveau) ? true : false ;
+	public static boolean validationIntelligenceOK (double d, double e, int valeurIntelligence) {
+		boolean intelligenceOK = (e + valeurIntelligence <= d) && validationNiveauOK(d) ? true : false ;
 		return intelligenceOK;
 	}
 	
-	public static boolean validationAgiliteOK (int valeurNiveau, int valeurForce, int valeurIntelligence, int valeurAgilite) {
+	public static boolean validationAgiliteOK (double valeurNiveau, double valeurForce, double valeurIntelligence, double valeurAgilite) {
 		boolean agiliteOK = (valeurForce + valeurIntelligence + valeurAgilite == valeurNiveau) && 
 				validationNiveauOK(valeurNiveau) ? true : false ;
 		return agiliteOK;

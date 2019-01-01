@@ -3,11 +3,12 @@ package model;
 public class Joueur {
 	
 	private int numeroJoueur;
+	private double viePersonnage;
 	private int classePersonnage;
-	private int niveauPersonnage;
-	private int forcePersonnage;
-	private int intelligencePersonnage;
-	private int agilitePersonnage;
+	private double niveauPersonnage;
+	private double forcePersonnage;
+	private double intelligencePersonnage;
+	private double agilitePersonnage;
 	
 	public int getNumeroJoueur() {
 		return numeroJoueur;
@@ -21,38 +22,45 @@ public class Joueur {
 	public void setClassePersonnage(int classePersonnage) {
 		this.classePersonnage = classePersonnage;
 	}
-	public int getNiveauPersonnage() {
+	public double getNiveauPersonnage() {
 		return niveauPersonnage;
 	}
-	public void setNiveauPersonnage(int niveauPersonnage) {
+	public void setNiveauPersonnage(double niveauPersonnage) {
 		this.niveauPersonnage = niveauPersonnage;
 	}
-	public int getForcePersonnage() {
+	public double getForcePersonnage() {
 		return forcePersonnage;
 	}
-	public void setForcePersonnage(int forcePersonnage) {
-		this.forcePersonnage = forcePersonnage;
+	public void setForcePersonnage(double forceJoueurNumero) {
+		this.forcePersonnage = forceJoueurNumero;
 	}
-	public int getIntelligencePersonnage() {
+	public double getIntelligencePersonnage() {
 		return intelligencePersonnage;
 	}
-	public void setIntelligencePersonnage(int intelligencePersonnage) {
+	public void setIntelligencePersonnage(double intelligencePersonnage) {
 		this.intelligencePersonnage = intelligencePersonnage;
 	}
 	
-	
-	public int getAgilitePersonnage() {
+	public double getAgilitePersonnage() {
 		return agilitePersonnage;
 	}
-	public void setAgilitePersonnage(int agilitePersonnage) {
+	public void setAgilitePersonnage(double agilitePersonnage) {
 		this.agilitePersonnage = agilitePersonnage;
 	}
 	
 
-	public Joueur(int numeroJoueur, int classePersonnage, int niveauPersonnage, int forcePersonnage,
-			int intelligencePersonnage, int agilitePersonnage) {
+
+	public double getViePersonnage() {
+		return viePersonnage;
+	}
+	public void setViePersonnage(double d) {
+		this.viePersonnage = d;
+	}
+	public Joueur(int numeroJoueur, int viePersonnage, int classePersonnage, double niveauPersonnage, 
+			double forcePersonnage, double intelligencePersonnage, double agilitePersonnage) {
 		super();
 		this.numeroJoueur = numeroJoueur;
+		this.viePersonnage = viePersonnage;
 		this.classePersonnage = classePersonnage;
 		this.niveauPersonnage = niveauPersonnage;
 		this.forcePersonnage = forcePersonnage;
@@ -69,7 +77,8 @@ public class Joueur {
 
 		return "Le joueur " + numeroJoueur + " est un " + classePersonnageWording + ", et est de niveau : "
 				+ niveauPersonnage + " dont force : " + forcePersonnage + ", intelligence : "
-				+ intelligencePersonnage + ", et d'agilite : " + agilitePersonnage ;
+				+ intelligencePersonnage + ", et d'agilite : " + agilitePersonnage +". La"
+						+ " vitalité du joueur est de "+viePersonnage;
 	}
 
 

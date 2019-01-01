@@ -57,6 +57,7 @@ public class Utilisation {
 			if (ValidationDeLaSommeDesCaracteresDuJoueur.validationNiveauOK(niveauJoueurNumero)) {
 				System.out.println("Vous êtes de niveau : " + niveauJoueur + "\n");
 				joueur.setNiveauPersonnage(niveauJoueurNumero);
+				joueur.setViePersonnage(5*niveauJoueurNumero);
 				choixForcePersonnage(joueur); // on dirige ensuite le joueur vers le choix de sa force
 				;
 
@@ -84,9 +85,9 @@ public class Utilisation {
 		String forceJoueur = sc.nextLine();
 
 		try {
-			int forceJoueurNumero = Integer.valueOf(forceJoueur); // transformons la valeur en nombre
+			double forceJoueurNumero = Double.valueOf(forceJoueur); // transformons la valeur en nombre
 
-			int valeurMaxAutorise = joueur.getNiveauPersonnage();
+			double valeurMaxAutorise = joueur.getNiveauPersonnage();
 			if (ValidationDeLaSommeDesCaracteresDuJoueur.validationForceOK(valeurMaxAutorise, forceJoueurNumero)) {
 				System.out.println("Vous êtes de force : " + forceJoueur);
 				joueur.setForcePersonnage(forceJoueurNumero);
@@ -112,7 +113,7 @@ public class Utilisation {
 
 	public void choixIntelligencePersonnage(Joueur joueur) {
 
-		int valeurMaxAutorise = joueur.getNiveauPersonnage() - joueur.getForcePersonnage();
+		double valeurMaxAutorise = joueur.getNiveauPersonnage() - joueur.getForcePersonnage();
 
 		System.out.println("Veuillez choisir l'intelligence de votre personnage : ");
 		System.out.println("Tapez une valeur entre 0 et " + valeurMaxAutorise);
@@ -148,7 +149,7 @@ public class Utilisation {
 
 	public void choixAgilitePersonnage(Joueur joueur) {
 
-		int valeurMaxAutorise = joueur.getNiveauPersonnage() - joueur.getForcePersonnage()
+		double valeurMaxAutorise = joueur.getNiveauPersonnage() - joueur.getForcePersonnage()
 				- joueur.getIntelligencePersonnage();
 
 		System.out.println("Votre agilité est donc de : " + valeurMaxAutorise);

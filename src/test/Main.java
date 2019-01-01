@@ -9,6 +9,8 @@ import service.ServiceImplementation;
 public class Main {
 	
 	public static final int NOMBREJOUEUR = 2; // on déclare le nomnbre de joueur de la partie
+	public static double[] vitaliteInitialeJoueur = new double[2];
+
 	
 	public static void main(String[] args) {
 		Vue.choixPersonnageJoueur();
@@ -20,8 +22,8 @@ public class Main {
 		System.out.println("********************** Résumé des personnages de la partie **********************");
 		for (Joueur joueur : allCustomer) {
 			System.out.println(joueur);
-			
-			
+			vitaliteInitialeJoueur[joueur.getNumeroJoueur()-1]=joueur.getViePersonnage(); // On récupère la vitalité initiale des deux joueurs dans le tableau
+			// on fait moins 1 car le numéro du joueur commence par 1.
 		}
 
 
