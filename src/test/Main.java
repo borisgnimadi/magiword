@@ -17,16 +17,17 @@ public class Main {
 		
 		ServiceImplementation joueurEnbase = new ServiceImplementation();
 		
-		List<Joueur> allCustomer = joueurEnbase.getAllJoueur();
+		List<Joueur> allJoueurs = joueurEnbase.getAllJoueur();
 		
 		System.out.println("********************** Résumé des personnages de la partie **********************");
-		for (Joueur joueur : allCustomer) {
+		for (Joueur joueur : allJoueurs) {
 			System.out.println(joueur);
 			vitaliteInitialeJoueur[joueur.getNumeroJoueur()-1]=joueur.getViePersonnage(); // On récupère la vitalité initiale des deux joueurs dans le tableau
 			// on fait moins 1 car le numéro du joueur commence par 1.
 		}
-
-
+		
+		Vue.deroulementAttaque(allJoueurs);
 	}
 
+	
 }

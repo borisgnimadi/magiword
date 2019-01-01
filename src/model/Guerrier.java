@@ -7,11 +7,13 @@ public class Guerrier implements Attaque {
 	 * Le joueur qui utilise cette attaque effectue des dommages égaux à sa force 
 	 * sur l’adversaire.
 	 */
-	@Override
+
 	public void attaqueBasique(Joueur joueurAttaquant, Joueur joueurvictime) {
 		double niveauVieAttaquant = joueurAttaquant.getNiveauPersonnage();
 		double vitaliteVictime = joueurvictime.getViePersonnage();
 
+		System.out.println("Joueur "+joueurAttaquant.getNumeroJoueur()+" utilise Coup d'épé et inflige "
+				+ niveauVieAttaquant+ " dommages à joueur "+joueurvictime.getNumeroJoueur());
 		joueurvictime.setViePersonnage(vitaliteVictime-niveauVieAttaquant); // on prend la vitalité de la victime et 
 		// on soustrait la force de l'attaquant
 	}
@@ -27,6 +29,11 @@ public class Guerrier implements Attaque {
 		double niveauVieAttaquant = joueurAttaquant.getNiveauPersonnage();
 		double vitaliteVictime = joueurvictime.getViePersonnage();
 		double vitaliteAttaquant = joueurAttaquant.getViePersonnage();
+
+		System.out.println("Joueur "+joueurAttaquant.getNumeroJoueur()+" utilise Coup de rage et inflige "
+				+ niveauVieAttaquant*2+" dommages à joueur "+joueurvictime.getNumeroJoueur());
+		System.out.println("Joueur "+joueurAttaquant.getNumeroJoueur()+" perd "+0.5*niveauVieAttaquant+" points de vie"
+				+ " et joueur "+joueurvictime.getNumeroJoueur()+" perd "+2*niveauVieAttaquant+" points de vie");
 
 		joueurvictime.setViePersonnage(vitaliteVictime-2*niveauVieAttaquant); // on prend la vitalité de la victime et 
 		// on soustrait le double de la force de l'attaquant

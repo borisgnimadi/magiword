@@ -14,6 +14,8 @@ public class Mage implements Attaque {
 		double niveauVieAttaquant = joueurAttaquant.getNiveauPersonnage();
 		double vitaliteVictime = joueurvictime.getViePersonnage();
 
+		System.out.println("Joueur " + joueurAttaquant.getNumeroJoueur() + " utilise Boule de Feu et inflige"
+				+ niveauVieAttaquant+" dommages à joueur " + joueurvictime.getNumeroJoueur());
 		joueurvictime.setViePersonnage(vitaliteVictime-niveauVieAttaquant); // on prend la vitalité de la victime et 
 		// on soustrait du niveau de vie de l'attaquant
 	}
@@ -27,15 +29,18 @@ public class Mage implements Attaque {
 	public void attaqueSpeciale(Joueur joueurAttaquant, Joueur joueurvictime) {
 		double vitaliteAttaquant = joueurAttaquant.getViePersonnage();
 		double vitaliteInitialAttaquant = Main.vitaliteInitialeJoueur[joueurAttaquant.getNumeroJoueur()-1];
+		
+		double niveauVieAttaquant = joueurAttaquant.getIntelligencePersonnage();
+
+		System.out.println("Joueur " + joueurAttaquant.getNumeroJoueur() + " utilise Soin et gagne "
+				+ 2*niveauVieAttaquant+" en vitalité");
 
 		if (2*vitaliteAttaquant <= vitaliteInitialAttaquant) {
-			joueurAttaquant.setViePersonnage(vitaliteAttaquant*2); // on prend la vitalité de l'attaquant et 
-			// on rajoute la moitié de la force de l'attaquant. 
-			joueurAttaquant.setIntelligencePersonnage(joueurAttaquant.getIntelligencePersonnage()*2); 
+			joueurAttaquant.setViePersonnage(vitaliteAttaquant+niveauVieAttaquant*2); // le joueur utilisant cette attaque gagne  
+			// 2 fois en niveau d'intelligence. 
 		} else {
-			joueurAttaquant.setViePersonnage(vitaliteInitialAttaquant); // on prend la vitalité de l'attaquant et 
-			// on rajoute la moitié de la force de l'attaquant. 
-			joueurAttaquant.setIntelligencePersonnage(vitaliteInitialAttaquant/5); 
+			joueurAttaquant.setViePersonnage(vitaliteInitialAttaquant); // le joueur utilisant cette attaque gagne  
+			// 2 fois en niveau d'intelligence
 			
 		}
 	}
