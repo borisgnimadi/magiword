@@ -47,7 +47,7 @@ public class Utilisation {
 
 	public void choixNiveauPersonnage(Joueur joueur) {
 		System.out.println(
-				"Veuillez choisir le niveau de votre personnage : \nTapez une valeur entre 0 et 100.\nPour revenir au menu précédent, veuillez taper 999.");
+				"Veuillez choisir le niveau de votre personnage : \nTapez une valeur entre 1 et 100.\nPour revenir au menu précédent, veuillez taper 999.");
 
 		String niveauJoueur = sc.nextLine();
 
@@ -66,13 +66,13 @@ public class Utilisation {
 
 			} else {
 				System.out.println("Votre saisie n'est pas correcte.\n"
-						+ "Vous devez tapez un nombre entre 0 et 100 ou 999 (pour revenir en arrière).\n");
+						+ "Vous devez tapez un nombre entre 1 et 100 ou 999 (pour revenir en arrière).\n");
 				choixNiveauPersonnage(joueur);
 
 			}
 		} catch (Exception e) {
 			System.out.println("Votre saisie n'est pas correcte.\n"
-					+ "Vous devez taper un nombre entre 0 et 100 ou 999 (pour revenir en arrière).\n.");
+					+ "Vous devez taper un nombre entre 1 et 100 ou 999 (pour revenir en arrière).\n.");
 			choixNiveauPersonnage(joueur);
 		}
 	}

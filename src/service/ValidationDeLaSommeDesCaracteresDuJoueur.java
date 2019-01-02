@@ -8,7 +8,7 @@ package service;
 public class ValidationDeLaSommeDesCaracteresDuJoueur {
 	
 	public static boolean validationNiveauOK (double valeurMaxAutorise) {
-		boolean niveauOK = valeurMaxAutorise <= 100 ? true : false ;
+		boolean niveauOK = valeurMaxAutorise>=1 && valeurMaxAutorise <= 100 ? true : false ;
 		return niveauOK;
 	}
 	

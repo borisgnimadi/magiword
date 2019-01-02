@@ -7,6 +7,11 @@ import java.util.Map;
 
 import model.Joueur;
 
+/**
+ * IL s'agit de la classe à implémenter pour la persistence
+ * @author user
+ *
+ */
 public class MemoryJoueurDAO implements JoueurDAO {
 	
 	private static final Map<Integer, Joueur> DB = new HashMap<>();

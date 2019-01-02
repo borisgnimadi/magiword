@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Cette classe représente le joueur, ses attributs et méthodes 
+ * @author user
+ *
+ */
 public class Joueur {
 	
 	private int numeroJoueur;

@@ -1,6 +1,10 @@
 package model;
 
-public class Rodeur implements Attaque {
+/**
+ * décrit les attaques du Rodeur
+ * @author user
+ *
+ */public class Rodeur implements Attaque {
 
 	/**
 	 * Il s'agit d'un Tir à l’Arc : Le joueur qui utilise cette attaque effectue des
@@ -11,7 +15,7 @@ public class Rodeur implements Attaque {
 		double niveauVieAttaquant = joueurAttaquant.getNiveauPersonnage();
 		double vitaliteVictime = joueurvictime.getViePersonnage();
 
-		System.out.println("Joueur " + joueurAttaquant.getNumeroJoueur() + " utilise  Tire à l'arc et inflige"
+		System.out.println("Joueur " + joueurAttaquant.getNumeroJoueur() + " utilise  Tire à l'arc et inflige "
 				+ niveauVieAttaquant + " dommages à joueur " + joueurvictime.getNumeroJoueur());
 		joueurvictime.setViePersonnage(vitaliteVictime - niveauVieAttaquant); // on prend la vitalité de la victime et
 		// on soustrait du niveau de vie de l'attaquant

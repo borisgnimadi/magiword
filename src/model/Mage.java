@@ -2,6 +2,11 @@ package model;
 
 import test.Main;
 
+/**
+ * décrit les attaques du Mage
+ * @author user
+ *
+ */
 public class Mage implements Attaque {
 
 	/** 

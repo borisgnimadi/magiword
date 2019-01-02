@@ -1,6 +1,10 @@
 package model;
 
-public class Guerrier implements Attaque {
+/**
+ * décrit les attaques du Guerrier
+ * @author user
+ *
+ */public class Guerrier implements Attaque {
 
 	/** 
 	 * Il s'agit d'un Coup d’Épée. 

@@ -10,7 +10,9 @@ import service.ServiceImplementation;
 import test.Main;
 
 /**
- * Cette classe définit des méthodes relatives au textes à présenter aux utilisateurs
+ * Cette classe définit des méthodes relatives au textes à présenter aux
+ * utilisateurs
+ * 
  * @author user
  *
  */
@@ -20,7 +22,7 @@ public class Vue {
 	 * Démarrage du jeu par le joueur numero n
 	 */
 	public static void messageBienvenueDuJoueur(int numeroJoueur) {
-		System.out.println("Bienvenue dans le jeu Magic Word. \n" + "Vous êtes le joueur " + numeroJoueur + ".\n"
+		System.out.println("Bienvenue dans le jeu MagiWorld ! \n" + "Vous êtes le joueur " + numeroJoueur + ".\n"
 				+ "Dans un premier temps, vous allez " + "définir les caractéristiques de votre personnage. \n"
 				+ "Attention : le total force + agilité + " + "intelligence doit être égal au niveau du joueur. \n"
 				+ "Veuillez appuyer la touche \"Entrée\" pour démarrer le jeu.");
@@ -76,6 +78,14 @@ public class Vue {
 		}
 	}
 
+	public static double renvoieValeurZeroSiValeurNegative(double d) {
+
+		if (d < 0) {
+			d = 0;
+		}
+		return d;
+	}
+
 	/**
 	 * fait appel à l'attaque à utiliser
 	 * 
@@ -126,8 +136,9 @@ public class Vue {
 		do {
 			for (Joueur joueur : allJoueurs) {
 				Joueur joueurAdverse = joueurAdverse(allJoueurs, joueur);
-				System.out.println("\nJoueur " + joueur.getNumeroJoueur() + ", (" + joueur.getViePersonnage()
-						+ " vitalité)" + ", appuyer sur 1 pour une attaque basique ou 2 pour une attaque spéciale.");
+				System.out.println("\nJoueur " + joueur.getNumeroJoueur() + ", ("
+						+ renvoieValeurZeroSiValeurNegative(joueur.getViePersonnage()) + " vitalité)"
+						+ ", appuyer sur 1 pour une attaque basique ou 2 pour une attaque spéciale.");
 				String attaque = Utilisation.sc.nextLine();
 				switch (attaque) {
 				case "1":
